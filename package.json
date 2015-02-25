@@ -1,9 +1,23 @@
 {
   "name": "reaper-of-stats",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/K4orta/reaper-of-stats.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/K4orta/reaper-of-stats/issues"
+  },
+  "homepage": "https://github.com/K4orta/reaper-of-stats",
   "devDependencies": {
-    "grunt": "~0.4.2",
-    "grunt-contrib-watch": "*",
-    "grunt-contrib-less": "~0.11.0"
+    "browserify": "^9.0.3",
+    "gulp": "^3.8.11"
   }
 }
