@@ -1,0 +1,8 @@
+{
+  "name": "Reaper of Stats",
+  "version": "1.0.0",
+  "dependencies": {
+    "picnic": "*",
+    "normalize.css": "~3.0.2"
+  }
+}
