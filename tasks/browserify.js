@@ -4,8 +4,6 @@ module.exports = function(gulp) {
       source = require('vinyl-source-stream'),
       buffer = require('vinyl-buffer'),
       gutil = require('gulp-util'),
-      reactify = require('reactify'),
-      babelify = require('babelify'),
       uglify = require('gulp-uglify'),
       livereload = require('gulp-livereload');
 

@@ -6,7 +6,7 @@ module.exports = function(gulp) {
 	// Configs
 	var BASE_DIR = 'public',
 		STYLES_DIR = 'stylesheets',
-		SRC_DIR = BASE_DIR + '/src',
+		SRC_DIR = 'src',
 		DIST_DIR = BASE_DIR + '/dist',
 		VIEW_DIR = BASE_DIR + '/views';
 
@@ -15,9 +15,8 @@ module.exports = function(gulp) {
 		gulp.watch(STYLES_DIR + '/**/*.less', ['less']);
 		gulp.watch([VIEW_DIR + '/**/*.jade']).on('change', livereload.changed);
 		gulp.watch([
-			SRC_DIR + '/**/*.js',
-			'!' + DIST_DIR + '/**/*.js'
-		], ['browserify']);
+			SRC_DIR + '/**/*.js'
+		], ['transpile', 'browserify']);
 		
 		nodemon({
 			script: 'index.js',
