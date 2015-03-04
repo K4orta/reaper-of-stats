@@ -1,9 +1,8 @@
-'use strict';
-
 import React from 'react';
 import FluxComponent from 'flummox/component';
-import {State} from 'react-router';
-import HeroList from '../heroes/hero-list';
+import HeroInfo from '../heroes/hero-info';
+import HeroStats from '../heroes/hero-stats';
+import { State } from 'react-router';
 
 export default React.createClass({
 	mixins: [State],
@@ -13,15 +12,20 @@ export default React.createClass({
 	componentDidMount() {
 		let profileActions = this.context.flux.getActions('profile');
 		profileActions.fetchProfile(this.getParams().battleTag);
+		let heroActions = this.context.flux.getActions('hero');
+		heroActions.fetchStats(this.getParams().id);
 	},
-	render() { 
+	render() {
 		return (
 			<div>
-				<h1>Heroes</h1>
-				<h4>{this.getParams().battleTag}</h4>
+				<h1>Hero</h1>
 				<FluxComponent connectToStores={'profile'}>
-					<HeroList />
+					<HeroInfo heroId={this.getParams().id} />
 				</FluxComponent>
+				<FluxComponent connectToStores={'hero'}>
+					<HeroStats />
+				</FluxComponent>
+				<h4></h4>
 			</div>
 		);
 	}
