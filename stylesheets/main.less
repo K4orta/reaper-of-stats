@@ -1,4 +1,7 @@
 @import '../vendor/normalize.css/normalize.css';
+@import 'vars';
+@import 'globals';
+@import '_landing';
 
 html {
 	font-size: 16px;
@@ -19,6 +22,8 @@ h1,h2,h3,h4,h5,h6 {
 nav {
 	background-color: #4dbfbf;
 	color: #FCFCFC;
+	font-weight: 300;
+	letter-spacing: 1px;
 }
 
 nav ul {
@@ -30,7 +35,45 @@ nav li {
 	padding: .5rem 1rem;
 }
 
+a {
+	color: #3c3c3c;
+	text-decoration: none;
+}
+
+nav a:visited {
+	color: white;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+}
 
 .content {
 	padding: 1rem;
+}
+
+.damage-line {
+	fill: none;
+	stroke: red;
+	stroke-width: 1.5px;
+}
+
+.toughness-line {
+	fill: none;
+	stroke: steelblue;
+	stroke-width: 1.5px;
+}
+
+.healing-line {
+	fill: none;
+	stroke: green;
+	stroke-width: 1.5px;
+}
+
+.domain {
+	// stroke: #999;
+	// stroke-width: 1px;
+	
+	fill: #aaa;
 }

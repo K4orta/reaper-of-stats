@@ -1,15 +1,19 @@
 'use strict';
 
 import React from 'react';
-import { RouteHandler } from 'react-router';
+import { RouteHandler, Link } from 'react-router';
 
 export default React.createClass({
 	render() {
 		return (
 			<div className='page-wrapper'>
-				<nav>
+				<nav className='primary-nav'>
 					<ul>
-						<li>Home</li>
+						<li>
+							<Link to='/reaper'>
+								fitpit
+							</Link>
+						</li>
 						<li>Heroes</li>
 					</ul>
 				</nav>

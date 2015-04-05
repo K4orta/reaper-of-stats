@@ -4,6 +4,7 @@ import AppLayout from './layout';
 import HeroesView from './views/heroes';
 import HeroView from './views/hero';
 import SignUpView from './views/signup';
+import TestView from './views/test';
 
 let Routes = (
 	<Route name='app' path='/' handler={AppLayout}>
