@@ -9,9 +9,9 @@ export default class Flux extends Flummox {
 	constructor() {
 		super();
 
-		this.createActions('profile', ProfileActions);
-		this.createStore('profile', ProfileStore, this);
-		this.createActions('hero', HeroActions);
-		this.createStore('hero', HeroStore, this);
+		const profileActions = this.createActions('profile', ProfileActions);
+		this.createStore('profile', ProfileStore, {profileActions});
+		const heroActions = this.createActions('hero', HeroActions);
+		this.createStore('hero', HeroStore, {heroActions});
 	}
 };

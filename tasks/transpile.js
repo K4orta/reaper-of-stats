@@ -16,7 +16,7 @@ module.exports = function(gulp) {
 		.pipe(react())
 		.pipe(gulp.dest('lib/'))
 		.on("end", function() {
-			cb(null);
+			cb();
 		});
 	});
 };

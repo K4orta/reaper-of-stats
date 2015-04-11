@@ -1,11 +1,11 @@
 import { Store } from 'flummox';
 
 export default class ProfileStore extends Store {
-	constructor(flux) {
+	constructor({ profileActions }) {
 		super();
-		let actionIds = flux.getActionIds('profile');
+		// let actionIds = flux.getActionIds('profile');
 
-		this.register(actionIds.fetchProfile, this.updateProfile);
+		this.register(profileActions.fetchProfile, this.updateProfile);
 
 		this.state = {
 			battleTag: '',

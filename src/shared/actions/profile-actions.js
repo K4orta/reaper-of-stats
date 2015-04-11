@@ -5,12 +5,10 @@ let SERVER = 'http://192.241.219.68:8048/';
 
 export default class ProfileActions extends Actions {
 	async fetchProfile(battleTag) {
-		let resp = await request
-			.get(`${SERVER}/heroes/${battleTag}`)
-			.exec();
+		let resp = await fetch(`${SERVER}/heroes/${battleTag}`);
 		return {
 			battleTag: battleTag,
-			heroes: resp.body
+			heroes: await resp.json()
 		}
 	}
 };

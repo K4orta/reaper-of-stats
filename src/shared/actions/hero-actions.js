@@ -5,11 +5,16 @@ let SERVER = 'http://192.241.219.68:8048/';
 
 export default class HeroActions extends Actions {
 	async fetchStats(id) {
-		let resp = await request
-			.get(`${SERVER}/stats/${id}`)
-			.exec();
+		let resp = await fetch(`${SERVER}/stats/${id}`);
 		return {
-			stats: resp.body
+			stats: await resp.json()
+		}
+	}
+
+	async fetchRecent() {
+		let resp = await fetch(`${SERVER}/recent`);
+		return {
+			recent: await resp.json()
 		}
 	}
 };

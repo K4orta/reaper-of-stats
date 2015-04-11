@@ -1,18 +1,19 @@
 import { Store } from 'flummox';
 
 export default class HeroStore extends Store {
-	constructor(flux) {
+	constructor({heroActions}) {
 		super();
-		let actionIds = flux.getActionIds('hero');
-
-		this.register(actionIds.fetchStats, this.updateStats);
+		this.register(heroActions.fetchStats, this.updateStats);
+		this.register(heroActions.fetchRecent, this.updateStats);
 
 		this.state = {
-			stats: []
+			stats: [],
+			recent: []
 		};
 	}
 
 	updateStats(data) {
+		console.log(data);
 		this.setState(data);
 	}
 

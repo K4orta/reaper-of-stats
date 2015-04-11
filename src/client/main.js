@@ -3,6 +3,7 @@ import Routes from '../shared/components/routes';
 import Router from 'react-router';
 
 import Flux from '../shared/flux';
+import FluxComponent from 'flummox/component';
 
 require('../shared/init');
 
@@ -12,8 +13,14 @@ let router = Router.create({
 
 let flux = new Flux();
 
-router.run((Handler) => {
-	React.withContext({flux}, ()=> {
-		React.render(<Handler />, document.querySelector('.wrapper'));
-	});
+router.run((Handler, state) => {
+	const routeInfo = {state, flux};
+	
+	React.render(
+		<FluxComponent flux={flux}>
+			<Handler {...state} />
+		</FluxComponent>, 
+		document.querySelector('.wrapper')
+	);
+	
 });

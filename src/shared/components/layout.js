@@ -17,7 +17,7 @@ export default React.createClass({
 						<li>Heroes</li>
 					</ul>
 				</nav>
-				<RouteHandler />
+				<RouteHandler {...this.props} />
 			</div>
 		);
 	}

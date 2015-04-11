@@ -10,7 +10,6 @@ export default React.createClass({
 	render() {
 		return (
 			<div>
-				Entries: {this.props.stats.length}
 				<StatGraph data={this.props.stats} />
 			</div>
 		);
